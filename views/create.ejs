@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<main class="container-xl">
+  <% if(locals.created) { %>
+  <div class="alert alert-success" role="alert">Your post was created!</div>
+  <% } %>
+  <form action="/submit" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        name="content"
+        id="content"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</main>
+
+<%- include("partials/footer.ejs") %>
